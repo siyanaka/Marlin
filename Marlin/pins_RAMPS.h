@@ -375,6 +375,10 @@
 
     #elif ENABLED(VIKI2) || ENABLED(miniVIKI)
 
+      #define BEEPER_PIN        33
+
+      // Pins for DOGM SPI LCD Support
+      #define DOGLCD_A0         23
       #define DOGLCD_CS         45
       #define DOGLCD_A0         44
       #define LCD_SCREEN_ROT_180
@@ -406,38 +410,14 @@
       #define LCD_SDSS          53
       #define SD_DETECT_PIN     49
       #define KILL_PIN          41
-
-    #elif ENABLED(MKS_MINI_12864)  // Added in Marlin 1.1.6
-
+      #define BEEPER_PIN        33
+      #define DOGLCD_CS         29
       #define DOGLCD_A0         27
-      #define DOGLCD_CS         25
-
-      // GLCD features
-      //#define LCD_CONTRAST   190
-      // Uncomment screen orientation
-      //#define LCD_SCREEN_ROT_90
-      //#define LCD_SCREEN_ROT_180
-      //#define LCD_SCREEN_ROT_270
-
-      #define BEEPER_PIN        37
-      // not connected to a pin
-      #define LCD_BACKLIGHT_PIN 65 // backlight LED on A11/D65
-
-      #define BTN_EN1           31
-      #define BTN_EN2           33
-      #define BTN_ENC           35
-
-      #define SDSS              53
-      #define SD_DETECT_PIN     49
-      #define KILL_PIN          64
-
+      #define LCD_BACKLIGHT_PIN 67
     #elif ENABLED(MINIPANEL)
-
-      #define BEEPER_PIN        42
-      // not connected to a pin
-      #define LCD_BACKLIGHT_PIN 65 // backlight LED on A11/D65
-
-      #define DOGLCD_A0         44
+      #define BEEPER_PIN        33
+      // Pins for DOGM SPI LCD Support
+      #define DOGLCD_A0         42
       #define DOGLCD_CS         66
 
       // GLCD features
