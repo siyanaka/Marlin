@@ -87,6 +87,8 @@
   #define Z_MIN_PROBE_PIN  32
 #endif
 
+#define SLED_PIN           -1
+
 //
 // Steppers
 //
@@ -110,10 +112,10 @@
 #define E0_ENABLE_PIN      24
 #define E0_CS_PIN          42
 
-#define E1_STEP_PIN        36
-#define E1_DIR_PIN         34
-#define E1_ENABLE_PIN      30
-#define E1_CS_PIN          44
+//#define E1_STEP_PIN        36
+//#define E1_DIR_PIN         34
+//#define E1_ENABLE_PIN      30
+//#define E1_CS_PIN          44
 
 //
 // Temperature Sensors
@@ -149,6 +151,8 @@
 //
 // Heaters / Fans
 //
+#define FAN2_PIN   -1 // 44
+#define KosselFAN2_PIN 44
 #ifndef MOSFET_D_PIN
   #define MOSFET_D_PIN  -1
 #endif
@@ -268,7 +272,7 @@
     #define LCD_PINS_ENABLE     42
     #define LCD_PINS_D4         65
     #define LCD_PINS_D5         66
-    #define LCD_PINS_D6         44
+    #define LCD_PINS_D6         57
     #define LCD_PINS_D7         64
 
   #else
@@ -371,6 +375,10 @@
 
     #elif ENABLED(VIKI2) || ENABLED(miniVIKI)
 
+      #define BEEPER_PIN        33
+
+      // Pins for DOGM SPI LCD Support
+      #define DOGLCD_A0         23
       #define DOGLCD_CS         45
       #define DOGLCD_A0         44
       #define LCD_SCREEN_ROT_180
@@ -402,38 +410,14 @@
       #define LCD_SDSS          53
       #define SD_DETECT_PIN     49
       #define KILL_PIN          41
-
-    #elif ENABLED(MKS_MINI_12864)  // Added in Marlin 1.1.6
-
+      #define BEEPER_PIN        33
+      #define DOGLCD_CS         29
       #define DOGLCD_A0         27
-      #define DOGLCD_CS         25
-
-      // GLCD features
-      //#define LCD_CONTRAST   190
-      // Uncomment screen orientation
-      //#define LCD_SCREEN_ROT_90
-      //#define LCD_SCREEN_ROT_180
-      //#define LCD_SCREEN_ROT_270
-
-      #define BEEPER_PIN        37
-      // not connected to a pin
-      #define LCD_BACKLIGHT_PIN 65 // backlight LED on A11/D65
-
-      #define BTN_EN1           31
-      #define BTN_EN2           33
-      #define BTN_ENC           35
-
-      #define SDSS              53
-      #define SD_DETECT_PIN     49
-      #define KILL_PIN          64
-
+      #define LCD_BACKLIGHT_PIN 67
     #elif ENABLED(MINIPANEL)
-
-      #define BEEPER_PIN        42
-      // not connected to a pin
-      #define LCD_BACKLIGHT_PIN 65 // backlight LED on A11/D65
-
-      #define DOGLCD_A0         44
+      #define BEEPER_PIN        33
+      // Pins for DOGM SPI LCD Support
+      #define DOGLCD_A0         42
       #define DOGLCD_CS         66
 
       // GLCD features
