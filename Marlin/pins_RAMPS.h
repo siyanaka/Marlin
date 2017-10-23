@@ -87,6 +87,8 @@
   #define Z_MIN_PROBE_PIN  32
 #endif
 
+#define SLED_PIN           -1
+
 //
 // Steppers
 //
@@ -110,10 +112,10 @@
 #define E0_ENABLE_PIN      24
 #define E0_CS_PIN          42
 
-#define E1_STEP_PIN        36
-#define E1_DIR_PIN         34
-#define E1_ENABLE_PIN      30
-#define E1_CS_PIN          44
+//#define E1_STEP_PIN        36
+//#define E1_DIR_PIN         34
+//#define E1_ENABLE_PIN      30
+//#define E1_CS_PIN          44
 
 //
 // Temperature Sensors
@@ -149,6 +151,8 @@
 //
 // Heaters / Fans
 //
+#define FAN2_PIN   -1 // 44
+#define KosselFAN2_PIN 44
 #ifndef MOSFET_D_PIN
   #define MOSFET_D_PIN  -1
 #endif
@@ -268,7 +272,7 @@
     #define LCD_PINS_ENABLE     42
     #define LCD_PINS_D4         65
     #define LCD_PINS_D5         66
-    #define LCD_PINS_D6         44
+    #define LCD_PINS_D6         57
     #define LCD_PINS_D7         64
 
   #else
